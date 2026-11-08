@@ -1,0 +1,7 @@
+# dsh-llm-dump
+#
+# Adds one host row that hooks the `llm/stream` waterfall and appends the exact
+# request object to a JSONL file. Read-only: it never alters the request.
+- insert:
+    - id: llm-dump
+      name: 'dsh-llm-dump'

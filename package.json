@@ -1,0 +1,39 @@
+{
+  "name": "dsh-llm-dump",
+  "version": "0.1.0",
+  "description": "Capture every complete LLM request (messages, tools, sampling) into folded JSONL files",
+  "type": "module",
+  "license": "MIT",
+  "author": "wannaknowhys",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wannaknowhys/dsh-llm-dump.git"
+  },
+  "homepage": "https://github.com/wannaknowhys/dsh-llm-dump#readme",
+  "bugs": {
+    "url": "https://github.com/wannaknowhys/dsh-llm-dump/issues"
+  },
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib/index.js",
+    "cordis.patch.yml",
+    "tools/unfold-dump.mjs",
+    "README.md",
+    "README.zh-CN.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node test/smoke-fold.mjs && node test/smoke-response.mjs",
+    "unfold": "node tools/unfold-dump.mjs"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  }
+}

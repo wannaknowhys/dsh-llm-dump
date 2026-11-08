@@ -25,6 +25,9 @@ function check(label, actual, expected) {
   console.log(`${pass ? 'ok  ' : 'FAIL'} ${label}${pass ? '' : ` (${JSON.stringify(actual)})`}`);
 }
 
+const pkg = JSON.parse(readFileSync(new URL('../package.json', import.meta.url), 'utf8'));
+check('advertises the data format version', pkg.dsh?.formatVersion, 1);
+
 const sha1 = (text) => createHash('sha1').update(text, 'utf8').digest('hex');
 
 async function waitFor(path, count) {

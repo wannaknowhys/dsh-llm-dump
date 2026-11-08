@@ -65,6 +65,11 @@ so a replay can prove it reconstructed the exact content.
 [dsh-dump-manager](https://github.com/wannaknowhys/dsh-dump-manager). Readers
 must ignore unknown fields so a later minor version can add them.
 
+The format number is advertised as `dsh.formatVersion` in this package's
+`package.json` (currently `1`), independently of the package's semver — a
+UI-only release does not look like a format change. `dsh-dump-manager` reads it
+at startup and warns when it cannot read what this writer produces.
+
 | File | One line per | Fields |
 | --- | --- | --- |
 | `objects.jsonl` | unique content | `h` (SHA-1 of canonical JSON), `v` (the value) |

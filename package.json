@@ -34,6 +34,7 @@
   "dsh": {
     "bundle": {
       "patch": "./cordis.patch.yml"
-    }
+    },
+    "formatVersion": 1
   }
 }

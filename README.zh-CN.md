@@ -62,6 +62,10 @@ provider 边界上的 `GenerateOptions`：
 [dsh-dump-manager](https://github.com/wannaknowhys/dsh-dump-manager) 共享的
 只追加约定。读取方必须忽略未知字段，以便后续小版本新增字段。
 
+格式号通过本包 `package.json` 的 `dsh.formatVersion` 公布（当前为 `1`），与包的
+semver 相互独立——纯 UI 的发布不会被当成格式变化。`dsh-dump-manager` 启动时读取
+这个值，发现自己读不了当前写入格式时会给出警告。
+
 | 文件 | 每行一条 | 字段 |
 | --- | --- | --- |
 | `objects.jsonl` | 唯一内容 | `h`（规范 JSON 的 SHA-1）、`v`（值） |

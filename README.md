@@ -15,16 +15,19 @@ build that provides the `llm` service.
 
 ## Install / remove
 
-```powershell
-# install: point the plugin manager at this directory
-plugin_manager install_bundle target = <path to this directory>
+```sh
+# from npm
+dsh plugin --profile desktop add dsh-llm-dump
 
-# or from the CLI
-dsh plugin --profile <profile> add link:<path to this directory>
+# from a checkout
+dsh plugin --profile desktop add github:wannaknowhys/dsh-llm-dump
 
 # remove
-dsh plugin --profile <profile> remove dsh-llm-dump
+dsh plugin --profile desktop remove dsh-llm-dump
 ```
+
+The plugin manager accepts the same specs: `install_bundle target = dsh-llm-dump`
+or the checkout directory.
 
 Host modules do not hot-reload. After editing one, toggle its bundle so the Host
 re-imports the module.

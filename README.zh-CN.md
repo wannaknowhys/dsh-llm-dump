@@ -15,16 +15,18 @@ Harness 构建。
 
 ## 安装 / 移除
 
-```powershell
-# 安装：让插件管理器指向本目录
-plugin_manager install_bundle target = <本目录路径>
+```sh
+# 从 npm
+dsh plugin --profile desktop add dsh-llm-dump
 
-# 或使用 CLI
-dsh plugin --profile <profile> add link:<本目录路径>
+# 从源码
+dsh plugin --profile desktop add github:wannaknowhys/dsh-llm-dump
 
 # 移除
-dsh plugin --profile <profile> remove dsh-llm-dump
+dsh plugin --profile desktop remove dsh-llm-dump
 ```
+
+插件管理器接受同样的目标：`install_bundle target = dsh-llm-dump` 或本目录路径。
 
 Host 模块不会热重载。修改后切换一次 bundle，让 Host 重新导入模块。
 

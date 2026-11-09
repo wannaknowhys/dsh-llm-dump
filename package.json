@@ -1,6 +1,6 @@
 {
   "name": "dsh-llm-dump",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Capture every complete LLM request (messages, tools, sampling) into folded JSONL files",
   "type": "module",
   "license": "MIT",
